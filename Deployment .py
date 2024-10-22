@@ -222,7 +222,7 @@ def send_request():
         print(error.info())
         print(error.read().decode("utf8", 'ignore'))
 
-# إعداد واجهة المستخدم
+# Creating API
 root = tk.Tk()
 root.title("API Request Interface")
 
