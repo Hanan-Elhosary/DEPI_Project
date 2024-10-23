@@ -1,5 +1,5 @@
 
-## <h1 style="color:#EE4E4E; font-family: 'Pacifico', cursive; font-size: 30px; text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF;">Predictive Maintenance Project</h1>
+# Predictive Maintenance Project
 
 ## Project Overview
 This project focuses on **Predictive Maintenance**, using machine learning to predict equipment failures before they occur, allowing for proactive interventions. Our goal is to classify machine status (No Failure or Failure) and predict potential failures to enhance preventive maintenance strategies.
