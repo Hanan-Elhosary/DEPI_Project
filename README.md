@@ -85,9 +85,6 @@ Predictive maintenance is a data-driven approach that helps industries predict e
 ## Conclusion
 Predictive Maintenance and Predictive Log Analytics provide proactive solutions for reducing downtime, extending equipment lifespan, and optimizing resources. Leveraging machine learning models such as Random Forest and RoBERTa enhances prediction accuracy, making these approaches highly effective in industrial applications.
 
-## GitHub Repository
-- [GitHub Repo](#) (link to your repository)
-
 ---
 
 Thank you for exploring our project! Feel free to reach out for any further information.
