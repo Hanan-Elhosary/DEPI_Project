@@ -1,76 +1,97 @@
-
 # Predictive Maintenance Project
 
-## Project Overview
-This project focuses on **Predictive Maintenance**, using machine learning to predict equipment failures before they occur, allowing for proactive interventions. Our goal is to classify machine status (No Failure or Failure) and predict potential failures to enhance preventive maintenance strategies.
-
----
+"Unlocking the future of efficiency: Discover how predictive maintenance transforms operational challenges into proactive solutions, saving time, money, and resources."
 
 ## Team Members
-- **Menna El Sayed** - [LinkedIn](https://www.linkedin.com/in/menna-elsayed-859b7628a)
-- **Nourhan Ebrahim**
-- **Hanan Elhosary** - [LinkedIn](http://www.linkedin.com/in/hanan-elsaid-elhosary)
-- **Mariam Ahmed**
-
----
+- [Menna El Sayed](https://www.linkedin.com/in/menna-elsayed-859b7628a)
+- [Hanan Elhosary](http://www.linkedin.com/in/hanan-elsaid-elhosary)
+- [Nourhan Ebrahim](https://www.linkedin.com/in/norhan-ebrahim-87b32725a)
+- [Mariam Ahmed](https://www.linkedin.com/in/norhan-ebrahim-87b32725a)
 
 ## Agenda
-1. Problem Definition
+1. Problem
 2. Exploratory Data Analysis (EDA)
 3. Modeling
 4. Key Insights
 5. Deployment
 
----
+## Project Overview
+Predictive maintenance is a data-driven approach that helps industries predict equipment failures before they occur. This project aims to:
 
-## Problem Description
-- **Predictive Maintenance** is a data-driven approach to forecast machinery failures based on sensor readings, improving operational reliability.
-- Key Objectives:
-  1. Classify machine status (Failure/No Failure).
-  2. Predict failures before they happen.
-  3. Analyze sensor data to optimize operations.
-
----
+1. Classify machine status as either "No Failure" or "Failure".
+2. Predict failures to enable preventive maintenance.
+3. Leverage sensor data to understand operational conditions leading to failures, improving system reliability.
 
 ## Real-World Impact
-- **Reduced Costs:** Maintenance costs lowered by up to 20%.
-- **Increased Equipment Lifespan:** Extended by 15-20%.
-- **Minimized Downtime:** Unplanned downtimes are reduced.
-- **Efficient Resource Use:** Repairs optimized, waste reduced.
+- **Reduced Costs**: Lowers maintenance expenses.
+- **Increased Equipment Lifespan**: Extends machine lifespan by 15-20%.
+- **Minimized Downtime**: Reduces unplanned downtimes.
+- **Efficient Resource Utilization**: Optimizes repairs and reduces waste.
+
+## Steps in the Project
+
+### Data Cleaning
+- **Outliers**: Removed using Z-score to prevent bias from abnormal data points.
+- **Irrelevant Columns**: "UDI" and "Product ID" were removed as they don't provide meaningful information for modeling.
+
+### Data Transformation
+- **Label Encoding**: Converted categorical features into numerical values.
+- **Standardization**: Ensured all features contribute equally to the analysis.
+- **PCA**: Applied to reduce dimensionality and enhance visualization.
+- **SMOTE**: Used to handle class imbalance by generating synthetic samples.
+
+### Exploratory Data Analysis (EDA)
+- **Heatmaps**: Showed key feature correlations (e.g., air temperature and process temperature).
+- **Pair Plots**: Helped identify patterns and trends.
+- **Profile Report**: Generated a comprehensive summary, including data types, distributions, correlations, and outliers.
+
+### Modeling
+- **Support Vector Classifier**: Achieved 91.2% accuracy.
+- **Decision Tree Classifier**: Achieved 92% accuracy.
+- **Random Forest Classifier**: Achieved 91.89% accuracy before hyperparameter tuning.
+- **Hyperparameter Tuning**: Bayesian optimization was applied, leading to an improved Random Forest accuracy of 97.02%.
+- **Model Monitoring**: Used MLflow to track model performance, visualizing metrics like accuracy, AUC-ROC curves, and confusion matrices.
+
+### GANs for Data Generation
+- **CTGAN**: Used to generate synthetic tabular data, retaining statistical properties of the original dataset.
+- **Random Forest Testing**: Tested the usability of the generated data with a Random Forest classifier.
+
+## Azure Simulation Workflow
+1. **Data Upload**: Imported the dataset into Azure.
+2. **Data Preprocessing**: Cleaned and transformed the data.
+3. **Model Training**: Used a two-class Decision Tree model.
+4. **Model Scoring & Evaluation**: Assessed performance with evaluation metrics.
+5. **Deployment**: Deployed the trained model using a REST API for real-time predictions.
+
+## Predictive Log Analytics
+- This project analyzed log data to classify and categorize events, improving system behaviors and identifying anomalies. It utilized advanced machine learning techniques to enhance operational efficiency.
+
+### Dataset
+- **BGL Dataset**: Logs collected from a BlueGene/L supercomputer system.
+- **Rows**: 2000
+- **Columns**: 13 (2 integer columns and 11 string columns)
+
+### Data Cleaning & Transformation
+- Converted object types to string for consistency.
+- Filled missing values to improve data quality.
+
+### Modeling
+- Trained three transformer models (BERT, DistilBERT, and RoBERTa) on log data:
+  - **BERT**: 94.00% accuracy
+  - **DistilBERT**: 94.00% accuracy
+  - **RoBERTa**: 96.00% accuracy
+- **Conclusion**: RoBERTa outperformed both BERT and DistilBERT, making it the best model for log data classification.
+
+## Conclusion
+Predictive Maintenance and Predictive Log Analytics provide proactive solutions for reducing downtime, extending equipment lifespan, and optimizing resources. Leveraging machine learning models such as Random Forest and RoBERTa enhances prediction accuracy, making these approaches highly effective in industrial applications.
+
+## GitHub Repository
+- [GitHub Repo](#) (link to your repository)
 
 ---
 
-## Data Preprocessing
-1. **Outliers Removal:** Used Z-score method to handle extreme values.
-2. **Column Handling:** Removed unnecessary columns like `UDI` and `Product ID`.
-3. **Label Encoding:** Categorical features like `Type` were transformed into numerical values.
-4. **PCA & SMOTE:** Applied PCA to reduce dimensionality and SMOTE to balance class distribution.
-
----
-
-## Data Exploration
-- Histograms, box plots, and heatmaps were used to understand data distribution and relationships.
-- Correlations were observed between key variables like **Air Temperature**, **Process Temperature**, **Torque**, and **Rotational Speed**.
-
----
-
-## Modeling
-- Models applied:
-  - **Support Vector Classifier (SVM)**: 91.2%
-  - **Decision Tree Classifier**: 92%
-  - **Random Forest Classifier**: 91.89% (tuned to 97.02% with Bayesian optimization)
-
----
-
-## Deployment on Azure
-- Data uploaded, processed, and transformed in **Azure Machine Learning Studio**.
-- The trained model was deployed, creating a REST API endpoint for real-time predictions.
-- The API was integrated into an HTML/CSS interface for seamless interaction with the deployed model.
-
----
-
-## Predictive Log Analytics Project
-A complementary project analyzing **log data** for system behaviors and anomalies using advanced ML models like **BERT**, **DistilBERT**, and **RoBERTa**. The highest performing model was **RoBERTa** with 96% accuracy.
+Thank you for exploring our project! Feel free to reach out for any further information.
+accuracy.
 
 ---
 
